@@ -1,0 +1,15 @@
+{% extends 'all-news/base.html' %}
+
+{% block content %}
+  {{block.super}}<!--all to use any content that was defined inside a block in the parent template-->
+
+  <div class="row">
+    {% for item in news %}
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="text-center">{{ news_item.title }}</h2>
+    </div>
+    {% empty %}
+    <h1>There are no News Items</h1>
+    {% endfor %}
+  </div>
+{% endblock %}
